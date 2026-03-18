@@ -58,9 +58,8 @@ var cO2Data = CO2DataStructure()
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             if (error != nil) {
-                print(error)
+                print(error as Any)
             } else {
-                let httpResponse = response as? HTTPURLResponse
 //                print("Received from the CO2 API")
 //                if let data = data,
 //                    let urlContent = NSString(data: data, encoding: String.Encoding.ascii.rawValue) {

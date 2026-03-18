@@ -1874,9 +1874,6 @@ class menuFunctions: NSObject {
                     }
                     
                     
-                    self.smartCitizen24HourExposurePM25.title = "📊: Averages μg/m³ PM₂.₅:       1y: \(generatesmartCitizenAnnualAverage(pm25historicalString:outputpm25historicalString1y)) | 1m: \(generatesmartCitizenAnnualAverage(pm25historicalString:outputpm25historicalString1M)) | 1w: \(generatesmartCitizenAnnualAverage(pm25historicalString:outputpm25historicalString1w)) | 3d: \(generatesmartCitizen24HourAverage(pm25historicalString:outputpm25historicalString3d)) | 1d: \(generatesmartCitizen24HourAverage(pm25historicalString:outputpm25historicalString1d))"
-                    
-                    
                     func generatesmartCitizen24HourAverage(pm25historicalString:String) -> String{
                         
                         let step1 = pm25historicalString.replacingOccurrences(of: "[^\\.\\d+]", with: "", options: [.regularExpression])
@@ -1946,6 +1943,8 @@ class menuFunctions: NSObject {
                         }
                         
                     }
+                    
+                    self.smartCitizen24HourExposurePM25.title = "📊: Averages μg/m³ PM₂.₅:       1y: \(generatesmartCitizenAnnualAverage(pm25historicalString:outputpm25historicalString1y)) | 1m: \(generatesmartCitizenAnnualAverage(pm25historicalString:outputpm25historicalString1M)) | 1w: \(generatesmartCitizenAnnualAverage(pm25historicalString:outputpm25historicalString1w)) | 3d: \(generatesmartCitizen24HourAverage(pm25historicalString:outputpm25historicalString3d)) | 1d: \(generatesmartCitizen24HourAverage(pm25historicalString:outputpm25historicalString1d))"
                     
                     if AppDelegate().defaults.string(forKey:"SmartCitizenStationVersion") != "2.3" {
                         self.smartCitizenOtherPollutants.title = "☁️: VOC \(String(Int(smartCitizenPresentData.data?.sensors?[0].value ?? 0)))\(String(smartCitizenPresentData.data?.sensors?[0].unit ?? "0")) / CO₂ \(String(Int(smartCitizenPresentData.data?.sensors?[1].value ?? 0)))\(String(smartCitizenPresentData.data?.sensors?[1].unit ?? "0"))"

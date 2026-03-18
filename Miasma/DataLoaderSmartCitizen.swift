@@ -452,9 +452,8 @@ public class DataLoaderSmartCitizen {
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             if (error != nil) {
-                print(error)
+                print(error as Any)
             } else {
-                let httpResponse = response as? HTTPURLResponse
 //                print("Miasma received from the SmartCitizen Present API")
 //                if let data = data,
 //                   let urlContent = NSString(data: data, encoding: String.Encoding.ascii.rawValue) {
