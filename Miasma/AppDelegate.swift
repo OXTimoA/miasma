@@ -71,20 +71,20 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         } else if (defaults.bool(forKey: "First Launch") == true && defaults.integer(forKey: "ClimbingAQINotificationsWanted") == 1 && isKeyPresentInUserDefaults(key: "ClimbingAQINotificationsTrigger") == false ) {
             
             defaults.set(50, forKey:"ClimbingAQINotificationsTrigger")
-            defaults.set("🟢", forKey: "PreviousStateForNotification")
+            defaults.set("[G]", forKey: "PreviousStateForNotification")
             
             
             // this is where users should end up, and allows population of the RefreshInterval & PurpleAir EPA conversion factor features introduced in 1.21
         } else if (defaults.bool(forKey: "First Launch") == true && isKeyPresentInUserDefaults(key: "RefreshIntervalSeconds") == false ) && isKeyPresentInUserDefaults(key: "PurpleAirConversionFactorEPAInUse") == false {
             
-            defaults.set("🟢", forKey: "PreviousStateForNotification")
+            defaults.set("[G]", forKey: "PreviousStateForNotification")
             defaults.set(1200.0, forKey: "RefreshIntervalSeconds")
             defaults.set(0, forKey: "PurpleAirConversionFactorEPAInUse")
 
             // this is where users should end up, and allows popultion of CO2 Global Data introduced in 1.23
         } else if (defaults.bool(forKey: "First Launch") == true && isKeyPresentInUserDefaults(key: "ClimateChangeInUse") == false ) {
             
-            defaults.set("🟢", forKey: "PreviousStateForNotification")
+            defaults.set("[G]", forKey: "PreviousStateForNotification")
             defaults.set(1200.0, forKey: "RefreshIntervalSeconds")
             defaults.set(0, forKey: "PurpleAirConversionFactorEPAInUse")
             defaults.set(1, forKey: "ClimateChangeInUse")
@@ -92,7 +92,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
             // this is where most returning users should end up and they need an initial state for the notifications
         } else if defaults.bool(forKey: "First Launch") == true  {
             
-            defaults.set("🟢", forKey: "PreviousStateForNotification")
+            defaults.set("[G]", forKey: "PreviousStateForNotification")
             
             // default config for new users
         } else {
@@ -106,7 +106,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
             defaults.set(50, forKey:"ClimbingAQINotificationsTrigger")
             defaults.set(1, forKey:"FallingAQINotificationsWanted")
             defaults.set(50, forKey:"FallingAQINotificationsTrigger")
-            defaults.set("🟢", forKey: "PreviousStateForNotification")
+            defaults.set("[G]", forKey: "PreviousStateForNotification")
             defaults.set(1200.0, forKey: "RefreshIntervalSeconds")
             defaults.set(0, forKey: "PurpleAirConversionFactorEPAInUse")
             defaults.set(1, forKey: "ClimateChangeInUse")
